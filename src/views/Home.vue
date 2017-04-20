@@ -1,30 +1,41 @@
 <template>
     <div>
-        {{counta}}/{{countb}}/{{counFun}}/{{doneTodosCount}}
-        <button @click="add">测试1</button>
-        <button @click="add2">测试2</button>
+        state_mapping:{{counta}}/state_fun:{{counFun}}/getter:{{toCount}}
+        <br/>
+        <button @click="add">mutation_mapping</button>
+        <button @click="add2">mutation</button>
+        <button @click="ac_add">action</button>
+        <button @click="ac_add_child">action_child</button>
     </div>
 </template>
+
 <script>
-    import { mapState, mapGetters, mapMutations } from 'Vuex'
+    import { mapState, mapGetters, mapMutations, mapActions } from 'Vuex'
+    import * as types from '../vuex/types'
+
     export default {
         name: 'home',
         computed: {
             ...mapState({
-                counta: state => state.count,
-                countb: 'count',
+                counta: state => state.a.count,
                 counFun(state) {
-                    return state.count + 6;
+                    return state.a.count + 6;
                 }
             }),
-            ...mapGetters(['doneTodosCount'])
+            ...mapGetters({
+                toCount: types.DONE_TODOS_COUNT
+            })
         },
         methods: {
             ...mapMutations({
-                add: 'incrementStep'
+                add: types.INCREMENT_STEP
+            }),
+            ...mapActions({
+                ac_add: types.INCRMENT_ASYNC,
+                ac_add_child: types.INCRMENT_ASYNC_CHILD
             }),
             add2() {
-                this.$store.commit('increment', { n: 10 });
+                this.$store.commit(types.INCREMENT, { n: 10 });
             }
         }
     }
