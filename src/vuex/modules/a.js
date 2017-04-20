@@ -42,7 +42,7 @@ const actions = {
             setTimeout(() => {
                 commit(types.INCREMENT_STEP);
                 console.log(types.INCRMENT_ASYNC + ".begin..");
-                resolve();
+                resolve(2);
                 console.log(types.INCRMENT_ASYNC + ".end..");
             }, 1000);
         });
@@ -52,8 +52,8 @@ const actions = {
      */
     [types.INCRMENT_ASYNC_CHILD]({ dispatch, commit }) {
         // 当需要调用完成另一方法后再执行一些操作
-        dispatch(types.INCRMENT_ASYNC).then(() => {
-            console.log('child action.');
+        dispatch(types.INCRMENT_ASYNC).then((p) => {
+            console.log('child action.' + p);
         });
     }
 }

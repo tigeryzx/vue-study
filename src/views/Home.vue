@@ -31,9 +31,12 @@
                 add: types.INCREMENT_STEP
             }),
             ...mapActions({
-                ac_add: types.INCRMENT_ASYNC,
-                ac_add_child: types.INCRMENT_ASYNC_CHILD
+                ac_add: types.INCRMENT_ASYNC
             }),
+            ac_add_child(){
+                this.$store.dispatch(types.INCRMENT_ASYNC_CHILD);
+                console.log('warp end.');
+            },
             add2() {
                 this.$store.commit(types.INCREMENT, { n: 10 });
             }
