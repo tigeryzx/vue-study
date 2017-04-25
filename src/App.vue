@@ -21,17 +21,27 @@
       <router-link to="/Editor">
         Editor
       </router-link>
+      |
+      <router-link to="/Res">
+        Res
+      </router-link>
     </div>
-    <div>bootom</div>
+    <div>bootom <span v-if="loading">加载中..</span> </div>
   </div>
 </template>
 
 <script>
   import store from './vuex/store'
+  import { mapState } from 'Vuex';
 
   export default {
     name: 'app',
-    store
+    store,
+    computed: {
+      ...mapState({
+        loading: (state) => state.a.loading
+      })
+    }
   }
 
 </script>

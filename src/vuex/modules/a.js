@@ -6,6 +6,7 @@ import * as types from '../types'
 
 const state = {
     count: 1,
+    loading: false,
     todos: [{
         id: 1, text: 'item1', done: true
     }, {
@@ -21,6 +22,12 @@ const mutations = {
     },
     [types.INCREMENT](state, payload) {
         state.count += payload.n
+    },
+    [types.START_LOADING](state) {
+        state.loading = true;
+    },
+    [types.END_LOADING](state) {
+        state.loading = false;
     }
 }
 

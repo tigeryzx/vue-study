@@ -4,6 +4,7 @@ import Hello from '@/components/Hello'
 import Home from '@/views/Home'
 import About from '@/views/About'
 import Editor from '@/views/Editor'
+import Res from '@/views/Res'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/Editor',
       name: 'Editor',
       component: Editor
+    },
+    {
+      path: '/Res',
+      name: 'Res',
+      component: Res
     },
   ]
 })

@@ -1,25 +1,19 @@
 <template>
     <div>
         <html-Editor @htmlChange="htmlChange"></html-Editor>
-        <html-Render :srcHtml="srcHtml"></html-Render>
+        <div style="background-color:aqua;" v-html="srcHtml"></div>
     </div>
 </template>
 
 <script>
     import htmlEditor from '../components/HtmlEditor'
-    import htmlRender from '../components/HtmlRender'
     import * as types from '../vuex/types'
 
     export default {
         name: 'editor',
-        data () {
-            return {
-                srcHtml:''
-            }
-        },
         computed: {
-            srcHtml(){
-                this.$store.state.srcHtml;
+            srcHtml() {
+                return this.$store.state.b.srcHtml;
             }
         },
         methods: {
@@ -28,8 +22,7 @@
             }
         },
         components: {
-            'html-Editor': htmlEditor,
-            "html-Render": htmlRender
+            'html-Editor': htmlEditor
         }
     }
 
