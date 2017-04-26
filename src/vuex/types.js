@@ -10,6 +10,8 @@ export const SET_SRCHTML = "b/SET_SRCHTML"
 
 export const SUCCESS_GET_ALL_VALUES = "c/SUCCESS_GET_ALL_VALUES";
 export const FAILURE_GET_ALL_VALUES = "c/FAILURE_GET_ALL_VALUES";
+export const REMOVE_VALUE_ITEM = "c/REMOVE_VALUE_ITEM";
+export const UPDATE_VALUE_ITEM = "c/UPDATE_VALUE_ITEM";
 
 /**
  * getters 添加派出来的状态时使用
@@ -25,3 +27,6 @@ export const INCRMENT_ASYNC = "a/INCRMENT_ASYNC"
 export const INCRMENT_ASYNC_CHILD = "a/INCRMENT_ASYNC_CHILD"
 
 export const GET_ALL_VALUES = "c/GET_ALL_VALUES";
+export const SAVE_VALUE = "c/SAVE_VALUE";
+export const DELETE_VALUE = "c/DELETE_VALUE";
+export const UPDATE_VALUE = "c/UPDATE_VALUE";

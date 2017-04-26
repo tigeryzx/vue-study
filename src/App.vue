@@ -25,6 +25,10 @@
       <router-link to="/Res">
         Res
       </router-link>
+      |
+      <router-link :to="{name:'TRoute',params:{test:12}}">
+        Route
+      </router-link>
     </div>
     <div>bootom <span v-if="loading">加载中..</span> </div>
   </div>

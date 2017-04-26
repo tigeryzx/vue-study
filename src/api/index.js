@@ -21,8 +21,8 @@ export default {
     saveValue(data) {
         return ValuesResource.save(data);
     },
-    updateValue(id, data) {
-        return ValuesResource.update({ id: id }, data);
+    updateValue(data) {
+        return ValuesResource.update({ id: data.id }, data);
     },
     deleteValue(id) {
         return ValuesResource.remove({ id: id });
